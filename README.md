@@ -1,6 +1,6 @@
 # expensor
 
-A new Flutter project.
+A Flutter based project for calculating and tracking your daily expenses.
 
 ## Getting Started
 
