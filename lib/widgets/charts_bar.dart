@@ -9,7 +9,10 @@ class ChartsBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        FittedBox(child: Text('₹${spendingAmount.toStringAsFixed(0)}')),
+        Container(
+            height: 20,
+            child: FittedBox(
+                child: Text('₹${spendingAmount.toStringAsFixed(0)}'))),
         SizedBox(
           height: 10,
         ),
@@ -20,16 +23,18 @@ class ChartsBar extends StatelessWidget {
             children: <Widget>[
               Container(
                 decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey, width: 1.0),
-                    color: Color.fromRGBO(220, 220, 220, 1),
+                    border: Border.all(
+                        color: Color.fromRGBO(255, 214, 0, 1), width: 1.2),
+                    color: Color.fromRGBO(255, 249, 196, 1),
                     borderRadius: BorderRadius.circular(10)),
               ),
               FractionallySizedBox(
                 heightFactor: spendingPercentageOfTotal,
                 child: Container(
                   decoration: BoxDecoration(
-                    border: Border.all(color:Theme.of(context).primaryColorDark , width: 1.0),
-                    color: Theme.of(context).primaryColor,
+                    border: Border.all(
+                        color: Color.fromRGBO(233, 30, 99, 1), width: 2.0),
+                    color: Color.fromRGBO(241, 134, 192, 1),
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
