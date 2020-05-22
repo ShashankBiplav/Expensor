@@ -22,11 +22,13 @@ class _NewTransactionState extends State<NewTransaction> {
       return;
     }
 
-    widget.addTx(//added automatically after refactoring from stateless to stateful
+    widget.addTx(
+      //added automatically after refactoring from stateless to stateful
       enteredTitle,
       enteredAmount,
     );
-    Navigator.of(context).pop(); //for closing the topmost screen that is open that is Modal Sheet
+    Navigator.of(context)
+        .pop(); //for closing the topmost screen that is open that is Modal Sheet
   }
 
   @override
@@ -39,7 +41,14 @@ class _NewTransactionState extends State<NewTransaction> {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
             TextField(
-              decoration: InputDecoration(labelText: 'Title'),
+              cursorColor: Theme.of(context).accentColor,
+              decoration: InputDecoration(
+                labelText: 'Title',
+                labelStyle: TextStyle(color: Theme.of(context).accentColor),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Theme.of(context).accentColor),
+                ),
+              ),
               controller: titleController,
               onSubmitted: (_) => submitData(),
               // onChanged: (val) {
@@ -47,18 +56,28 @@ class _NewTransactionState extends State<NewTransaction> {
               // },
             ),
             TextField(
-              decoration: InputDecoration(labelText: 'Amount'),
+              cursorColor: Theme.of(context).accentColor,
+              decoration: InputDecoration(
+                labelText: 'Amount',
+                labelStyle: TextStyle(color: Theme.of(context).accentColor),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Theme.of(context).accentColor),
+                ),
+              ),
               controller: amountController,
               keyboardType: TextInputType.number,
               onSubmitted: (_) => submitData(),
               // onChanged: (val) => amountInput = val,
             ),
-            RaisedButton(
-              elevation: 10,
-              child: Text('Add Transaction'),
-              color: Colors.deepPurple,
-              textColor: Colors.white,
-              onPressed: submitData,
+            Container(
+              margin: EdgeInsets.only(top: 15),
+              child: RaisedButton(
+                elevation: 10,
+                child: Text('Add Transaction'),
+                color: Theme.of(context).accentColor,
+                textColor: Colors.white,
+                onPressed: submitData,
+              ),
             ),
           ],
         ),

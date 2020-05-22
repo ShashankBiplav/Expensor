@@ -11,10 +11,10 @@ class ChartsBar extends StatelessWidget {
       children: <Widget>[
         FittedBox(child: Text('₹${spendingAmount.toStringAsFixed(0)}')),
         SizedBox(
-          height: 4,
+          height: 10,
         ),
         Container(
-          height: 60,
+          height: 120,
           width: 10,
           child: Stack(
             children: <Widget>[
@@ -28,7 +28,8 @@ class ChartsBar extends StatelessWidget {
                 heightFactor: spendingPercentageOfTotal,
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Theme.of(context).primaryColorDark,
+                    border: Border.all(color:Theme.of(context).primaryColorDark , width: 1.0),
+                    color: Theme.of(context).primaryColor,
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),

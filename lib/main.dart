@@ -88,7 +88,10 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Expensor'),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.add),
+            icon: Icon(
+              Icons.add,
+              color: Theme.of(context).accentColor,
+            ),
             onPressed: () => _startAddNewTransaction(context),
           ),
         ],

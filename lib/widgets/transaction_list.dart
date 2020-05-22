@@ -14,7 +14,14 @@ class TransactionList extends StatelessWidget {
       child: transactions.isEmpty
           ? Column(
               children: <Widget>[
-                Text('No transactions to show!'),
+                Text(
+                  'No transactions to show!',
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 SizedBox(
                   height: 10,
                 ),
