@@ -94,6 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
     final appBar = AppBar(
       elevation: 10.0,
       // backgroundColor: Colors.deepPurple,
@@ -116,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Container(
-              height: (MediaQuery.of(context).size.height -
+              height: (mediaQuery.size.height -
                       appBar.preferredSize.height) *
                   0.3,
               child: Chart(
@@ -124,9 +125,9 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Container(
-              height: (MediaQuery.of(context).size.height -
+              height: (mediaQuery.size.height -
                       appBar.preferredSize.height -
-                      MediaQuery.of(context).padding.top) *
+                      mediaQuery.padding.top) *
                   0.7,
               child: TransactionList(_userTransactions, _deleteTransaction),
             ),

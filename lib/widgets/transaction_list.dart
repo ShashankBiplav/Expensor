@@ -33,7 +33,7 @@ class TransactionList extends StatelessWidget {
             ],
           )
         : ListView.builder(
-          shrinkWrap: true, //
+          shrinkWrap: true, //added to shrink the space occupied by list as many items are available
             itemBuilder: (ctx, index) {
               return Card(
                 margin: EdgeInsets.fromLTRB(7, 0, 7, 8),
