@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:expensor/widgets/transaction_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import './widgets/new_transaction.dart';
 import './widgets/chart.dart';
 import './models/transaction.dart';
@@ -135,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: Platform.isIOS ? Container(): FloatingActionButton(
         // backgroundColor: Colors.deepPurple,
         child: Icon(Icons.add),
         onPressed: () => _startAddNewTransaction(context),
