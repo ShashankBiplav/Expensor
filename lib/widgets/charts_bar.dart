@@ -7,17 +7,18 @@ class ChartsBar extends StatelessWidget {
   ChartsBar({this.label, this.spendingAmount, this.spendingPercentageOfTotal});
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return LayoutBuilder(builder :(ctx, constraints){
+      return  Column(
       children: <Widget>[
         Container(
-            height: 20,
+            height: constraints.maxHeight * 0.1,
             child: FittedBox(
                 child: Text('₹${spendingAmount.toStringAsFixed(0)}'))),
         SizedBox(
-          height: 10,
+          height: constraints.maxHeight * 0.05,
         ),
         Container(
-          height: 120,
+          height: constraints.maxHeight * 0.7,
           width: 10,
           child: Stack(
             children: <Widget>[
@@ -43,10 +44,11 @@ class ChartsBar extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 4,
+          height: constraints.maxHeight * 0.05,
         ),
-        Text(label),
+        Container(height: constraints.maxHeight * 0.1,child: Text(label)),
       ],
     );
+    });
   }
 }
